@@ -12,7 +12,24 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
+    inputs:
+      target_environment:
+        description: 'Run on environment'
+        required: true
+        type: string
+        default: default value
+      branch:
+        description: 'Select the branch'
+        required: true
+        type: choice
+        default: develop-branch
+        options:
+          - develop-branch
+          - test-branch
+      notify:
+        description: 'receive notify when workflow is completed'
+        required: false
+        type: boolean
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
