@@ -17,7 +17,7 @@ on:
         description: 'Run on environment'
         required: true
         type: string
-        default: default value
+        default: 'default value'
         
       branch:
         description: 'Select the branch'
@@ -47,9 +47,9 @@ jobs:
       - name: Run a target_environment
         run: echo "${{ inputs.target_environment }}"
       - name: Run a branch
-        run: "${{ inputs.branch }}"
+        run: echo "${{ inputs.branch }}"
       - name: Run a notify
-        run: "${{ inputs.notify }}"
+        run: echo "${{ inputs.notify }}"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
