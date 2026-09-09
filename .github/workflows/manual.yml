@@ -31,6 +31,8 @@ on:
         description: 'receive notify when workflow is completed'
         required: false
         type: boolean
+  schedule:
+    - cron: '*/10 * * * *'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
